@@ -1,0 +1,623 @@
+@import "../Variables/Variables.scss";
+
+// Media Queries
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1025px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin TV {
+  @media screen and (min-width: 1201px) {
+    @content;
+  }
+}
+
+// SignUp Page
+.signupContainer {
+  background-image: url("../assets/images/teamwork.png");
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $textColor;
+}
+.signupContainer__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.signupContainer__box__inner {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 27px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+.signupContainer__box__form {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    margin-bottom: 10px;
+    border: 1px solid $greyColor;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  label {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    svg {
+      font-size: 50px;
+    }
+  }
+  button {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: $primaryColor;
+    color: $white;
+    font-size: 1.1rem;
+  }
+  p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: crimson;
+    font-weight: 600;
+  }
+}
+.signupContainer__box__google {
+  margin-top: 50px;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: $white;
+    color: $textColor;
+    border: 1px solid $textColor;
+    font-size: 1.1rem;
+
+    img {
+      width: 20px;
+      margin-right: 10px;
+    }
+  }
+  p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: crimson;
+    font-weight: 600;
+  }
+}
+.signupContainer__box__login {
+  margin-top: 20px;
+  text-align: center;
+
+  a {
+    color: $primaryColor;
+    text-decoration: none;
+    font-weight: 700;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+// SignIn Page
+.signinContainer {
+  background-image: url("../assets/images/teamwork.png");
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $textColor;
+}
+.signinContainer__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.signinContainer__box__inner {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 27px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+.signinContainer__box__form {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    margin-bottom: 10px;
+    border: 1px solid $greyColor;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: $primaryColor;
+    color: $white;
+    font-size: 1.1rem;
+  }
+  p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: crimson;
+    font-weight: 600;
+  }
+}
+.signinContainer__box__google {
+  margin-top: 50px;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: $white;
+    color: $textColor;
+    border: 1px solid $textColor;
+    font-size: 1.1rem;
+
+    img {
+      width: 20px;
+      margin-right: 10px;
+    }
+  }
+  p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: crimson;
+    font-weight: 600;
+  }
+}
+.signinContainer__box__signup {
+  margin-top: 20px;
+  text-align: center;
+
+  a {
+    color: $primaryColor;
+    text-decoration: none;
+    font-weight: 700;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Home Page
+.home {
+  min-height: 100vh;
+  // @include mobile {
+  //   display: flex;
+  // }
+}
+.home__container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  .home__sidebar {
+    width: 25%;
+    border-right: 1px solid $lightGrey;
+    padding: 10px 15px;
+    .home__sidebar-signout {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      .home__sidebar-logo {
+        img {
+          width: 70px;
+          height: 70px;
+        }
+      }
+      .home__sidebar-signoutBtn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .home__sidebar-userProfileInfo {
+          display: flex;
+          align-items: center;
+          column-gap: 5px;
+          img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+          }
+        }
+
+        button {
+          border: transparent;
+          border-radius: 5px;
+          background-color: $primaryColor;
+          color: $white;
+          padding: 10px 20px;
+          font-size: 0.98rem;
+        }
+      }
+    }
+  }
+  .home__right {
+    width: 75%;
+    height: 100%;
+    .home__navBar {
+      padding: 40px;
+      border-bottom: 1px solid $lightGrey;
+    }
+    .home__chatbox {
+      background-color: $lightBlueMagenta;
+      height: 100%;
+    }
+  }
+}
+
+// Sidebar Comp
+
+.sidebar {
+  min-height: 100vh;
+}
+.sidebar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 30px;
+}
+.sidebar__chatIcon {
+  svg {
+    stroke: $secondaryColor;
+    stroke-width: 0.023rem;
+    fill: $secondaryColor;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// Search Comp
+.search {
+  height: 100%;
+  width: 100%;
+  .search__error {
+    color: $error;
+    margin: 20px 0;
+    font-weight: 600;
+    font-size: 1.123rem;
+  }
+  .search__userResult {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-top: 15px;
+    border-bottom: 1px solid $lightGrey;
+    padding: 15px 0 15px 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: $lightGrey;
+      border-radius: 5px;
+    }
+    &:focus {
+      background-color: $lightGrey;
+      border-radius: 5px;
+    }
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    span {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.search__container {
+  display: flex;
+  justify-content: center;
+
+  input {
+    width: 80%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+    outline: none;
+    background-color: $lightBlueMagenta;
+    margin-left: -0.89rem;
+    color: $lightGreyYellow;
+    &::placeholder {
+      color: $lightGreyYellow;
+      font-size: 0.76rem;
+    }
+  }
+
+  button {
+    width: 20%;
+    border: none;
+    background: $lightBlueMagenta;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  svg {
+    stroke: $lightGreyYellow;
+    stroke-width: 0.023rem;
+    fill: $lightGreyYellow;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// Chats Comp
+.chats {
+  .userChats {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      background-color: $lightGrey;
+      border-radius: 5px;
+    }
+    &:focus {
+      background-color: $lightGrey;
+      border-radius: 5px;
+    }
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .userChats__info {
+      display: flex;
+      column-gap: 15px;
+      .userChats__message {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        span {
+          font-size: 1.1rem;
+          font-weight: 700;
+        }
+        p {
+          color: $greyishBlue;
+          font-size: 0.9rem;
+        }
+      }
+      .userChats__timeNot {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        align-items: flex-end;
+        p {
+          color: $greyishBlue;
+          font-size: 0.86rem;
+        }
+        span {
+          text-align: right;
+          background-color: $secondaryColor;
+          color: $white;
+          border-radius: 5px;
+          height: 22px;
+          width: 22px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+// NavBar Comp
+.navBar__container {
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navBar__left {
+  display: flex;
+  align-items: center;
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  .navBar__info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    .navBar__status {
+      font-size: 0.75rem;
+      color: $secondaryColor;
+      margin-top: 5px;
+    }
+  }
+}
+.navBar__right {
+  display: flex;
+  align-items: center;
+  .navBar__videoIcon {
+    margin-right: 20px;
+  }
+  svg {
+    stroke: $greyColor;
+    stroke-width: 2.17;
+    cursor: pointer;
+  }
+}
+
+// ChatBox Comp
+.chatBox {
+  height: 100%;
+
+  // Messages Comp
+  .messages {
+    padding: 10px;
+    height: 88vh;
+    border-bottom: 1px solid $lightGrey;
+    overflow-y: scroll;
+
+    // Message Comp
+    .message {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+      .message__info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .message__info-time {
+          font-size: 12px;
+          color: $greyishBlue;
+          font-weight: 600;
+        }
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+      .message__content {
+        max-width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        p {
+          background-color: $white;
+          border: 2px solid $lightGrey;
+          padding: 15px 20px;
+          border-radius: 0px 8px 8px 8px;
+          max-width: max-content;
+        }
+        img {
+          width: 50%;
+          border-radius: 10px;
+        }
+      }
+      &.owner {
+        flex-direction: row-reverse;
+        .message__content {
+          align-items: flex-end;
+          p {
+            background-color: $primaryColor !important;
+            color: $white;
+            border-radius: 8px 0 8px 8px !important;
+          }
+        }
+      }
+    }
+  }
+
+  // InputField Comp
+  .inputField {
+    height: 12vh;
+    background-color: $white;
+    padding: 10px 25px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+    .inputField__inputIcons {
+      display: flex;
+      column-gap: 50px;
+      width: -webkit-fill-available;
+      height: 100%;
+      .inputField__uploadFile {
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+        svg {
+          fill: $greyishBlue;
+          cursor: pointer;
+        }
+      }
+      input {
+        outline: none;
+        border: none;
+        width: 100%;
+        height: 100%;
+        font-size: 1.1rem;
+      }
+    }
+    .submit {
+      height: 40px;
+      width: 40px;
+      background-color: $primaryColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      svg {
+        fill: $white;
+      }
+    }
+  }
+}
