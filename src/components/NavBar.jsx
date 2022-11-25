@@ -5,7 +5,6 @@ import { ChatContext } from "../context/ChatContext";
 
 const NavBar = () => {
   const { data } = useContext(ChatContext);
-  // console.log(data)
 
   return (
     <nav className='navBar__container'>

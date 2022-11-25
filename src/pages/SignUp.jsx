@@ -47,7 +47,6 @@ const SignUp = () => {
       );
       // Signed in
       const user = userCredential.user;
-      // console.log(`${name}, ${email}, ${password}, ${file}`);
 
       // upload image to firebase storage
       const storageRef = ref(storage, name);
@@ -92,7 +91,6 @@ const SignUp = () => {
     } catch (err) {
       const errorMessage = err.message;
 
-      console.log(errorMessage);
       setError(true);
       setErrorMessage(errorMessage);
     }
@@ -147,9 +145,7 @@ const SignUp = () => {
       // The AuthCredential type that was used.
       const credential = GoogleAuthProvider.credentialFromError(error);
 
-      console.log(
-        `errorMessage: ${errorMessage}, emailError: ${email}, credentialError: ${credential}`
-      );
+
     }
   };
 
@@ -195,7 +191,7 @@ const SignUp = () => {
             {error && <p>"Something went wrong!" {errorMessage}</p>}
           </form>
 
-          <div className='signupContainer__box__google'>
+          {/* <div className='signupContainer__box__google'>
             <button onClick={handleGoogleSignUp}>
               <span>
                 <img src={googleLogo} alt='Google Logo' />
@@ -203,7 +199,7 @@ const SignUp = () => {
               Sign Up with Google
             </button>
             {error && <p>"Something went wrong!" {googleErrorMessage}</p>}
-          </div>
+          </div> */}
 
           <div className='signupContainer__box__login'>
             <p>

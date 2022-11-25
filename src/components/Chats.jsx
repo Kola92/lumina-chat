@@ -55,8 +55,6 @@ const Chats = () => {
   };
 
   const chatArr = Object.entries(chats);
-  console.log(chatArr);
-  console.log(allChats);
 
   // Convert chat object to an array and map through it
   const chatList = Object.entries(chats)

@@ -34,11 +34,9 @@ const Search = () => {
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         setUser(doc.data());
-        console.log(user);
       });
     } catch (error) {
       setError(true);
-      console.log(error.message);
     }
   };
 
