@@ -13,7 +13,7 @@ const NavBar = () => {
         <img src={data.user.photoURL} alt='' />
         <div className='navBar__info'>
           <h3>{data.user.displayName}</h3>
-          <p className='navBar__status'>Typing...</p>
+          {/* <p className='navBar__status'>Typing...</p> */}
         </div>
       </div>
       <div className='navBar__right'>
