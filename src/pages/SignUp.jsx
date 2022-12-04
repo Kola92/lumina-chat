@@ -105,8 +105,10 @@ const SignUp = () => {
       const result = await signInWithPopup(auth, provider);
 
       // This gives you a Google Access Token. You can use it to access the Google API.
-      // const credential = GoogleAuthProvider.credentialFromResult(result);
-      // const token = credential.accessToken;
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+
+      // eslint-disable-next-line
+      const token = credential.accessToken;
 
       // The signed-in user info.
       const user = result.user;
@@ -140,9 +142,11 @@ const SignUp = () => {
       setGoogleErrorMessage(errorMessage);
 
       // The email of the user's account used.
+      // eslint-disable-next-line
       const email = error.customData.email;
 
       // The AuthCredential type that was used.
+      // eslint-disable-next-line
       const credential = GoogleAuthProvider.credentialFromError(error);
 
 
@@ -191,7 +195,7 @@ const SignUp = () => {
             {error && <p>"Something went wrong!" {errorMessage}</p>}
           </form>
 
-          {/* <div className='signupContainer__box__google'>
+          <div className='signupContainer__box__google'>
             <button onClick={handleGoogleSignUp}>
               <span>
                 <img src={googleLogo} alt='Google Logo' />
@@ -199,7 +203,7 @@ const SignUp = () => {
               Sign Up with Google
             </button>
             {error && <p>"Something went wrong!" {googleErrorMessage}</p>}
-          </div> */}
+          </div>
 
           <div className='signupContainer__box__login'>
             <p>

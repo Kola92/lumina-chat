@@ -30,23 +30,23 @@ const Chats = () => {
       };
     };
 
-    const getAllChats = () => {
-      const unsubscribe = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
-        setAllChats(doc.data());
-      });
+    // const getAllChats = () => {
+    //   const unsubscribe = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
+    //     setAllChats(doc.data());
+    //   });
 
-      // clean up function
-      return () => {
-        unsubscribe();
-      };
-    };
+    //   // clean up function
+    //   return () => {
+    //     unsubscribe();
+    //   };
+    // };
 
     // get chats if a user is available in the documents
     currentUser.uid && getChats();
 
     // get all chats if a chatId is available in the documents
-    data.chatId && getAllChats();
-  }, [currentUser.uid, data.chatId]);
+    // data.chatId && getAllChats();
+  }, [currentUser.uid]);
 
   // handle user chat selection
   const handleChatSelection = (u) => {
@@ -54,7 +54,6 @@ const Chats = () => {
     dispatch({ type: "CHANGE_USER", payload: u });
   };
 
-  const chatArr = Object.entries(chats);
 
   // Convert chat object to an array and map through it
   const chatList = Object.entries(chats)

@@ -105,7 +105,7 @@ const SignIn = () => {
             {error && <p>"Something went wrong!" {errorMessage}</p>}
           </form>
 
-          {/* <div className='signinContainer__box__google'>
+          <div className='signinContainer__box__google'>
             <button onClick={handleGoogleSignIn}>
               <span>
                 <img src={googleLogo} alt='Google Logo' />
@@ -113,7 +113,7 @@ const SignIn = () => {
               Sign In with Google
             </button>
             {error && <p>"Something went wrong!" {googleErrorMessage}</p>}
-          </div> */}
+          </div>
 
           <div className='signinContainer__box__signup'>
             <p>
