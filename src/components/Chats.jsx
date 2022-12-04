@@ -4,7 +4,6 @@ import { db } from "./firebase";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
 import ReactTimeAgo from "react-time-ago";
-import { MessageContext } from "../context/MessageContext";
 
 const Chats = () => {
   const [chats, setChats] = useState([]);
