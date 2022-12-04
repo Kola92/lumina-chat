@@ -75,9 +75,11 @@ const SignIn = () => {
       setGoogleErrorMessage(errorMessage);
 
       // The email of the user's account used.
+      // eslint-disable-next-line
       const email = error.customData.email;
 
       // The AuthCredential type that was used.
+      // eslint-disable-next-line
       const credential = GoogleAuthProvider.credentialFromError(error);
     }
   };

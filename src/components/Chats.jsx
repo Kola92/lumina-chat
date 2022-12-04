@@ -8,12 +8,8 @@ import { MessageContext } from "../context/MessageContext";
 
 const Chats = () => {
   const [chats, setChats] = useState([]);
-  const [allChats, setAllChats] = useState([]);
   const { currentUser } = useContext(AuthContext);
   const { dispatch, data } = useContext(ChatContext);
-
-  // eslint-disable-next-line
-  const { messages } = useContext(MessageContext);
 
   useEffect(() => {
     const getChats = () => {
@@ -30,23 +26,12 @@ const Chats = () => {
       };
     };
 
-    // const getAllChats = () => {
-    //   const unsubscribe = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
-    //     setAllChats(doc.data());
-    //   });
-
-    //   // clean up function
-    //   return () => {
-    //     unsubscribe();
-    //   };
-    // };
-
     // get chats if a user is available in the documents
     currentUser.uid && getChats();
 
     // get all chats if a chatId is available in the documents
     // data.chatId && getAllChats();
-  }, [currentUser.uid]);
+  }, [currentUser.uid, data.chatId]);
 
   // handle user chat selection
   const handleChatSelection = (u) => {
@@ -80,7 +65,6 @@ const Chats = () => {
               <p role='timer'>
                 <ReactTimeAgo date={chatTime} />
               </p>
-              {/* <span>{messages.length}</span> */}
             </div>
           </div>
         </div>
